@@ -25,12 +25,12 @@ describe('Article Statistics', () => {
       onBeforeLoad(win) {
         win.fetch = null;
       }
-    }).as('loginUser');
+    });
 
     cy.get('input[placeholder="Email"]').type(registeredUser.email);
     cy.get('input[placeholder="Password"]').type(`${registeredUser.password}{enter}`);
 
-    cy.wait(['@postUser', '@loginUser']);
+    cy.wait(['@postUser']);
   })
 
   beforeEach(() => {
