@@ -1,12 +1,20 @@
 import {
   ARTICLE_PAGE_LOADED,
   ARTICLE_PAGE_UNLOADED,
+  ARTICLE_STATISTICS_PAGE_LOADED,
   ADD_COMMENT,
+  ADD_SHARE,
   DELETE_COMMENT
 } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
   switch (action.type) {
+    case ARTICLE_STATISTICS_PAGE_LOADED:
+      return {
+        ...state,
+        article: action.payload[0].article,
+        shares: action.payload[1].shares
+      };
     case ARTICLE_PAGE_LOADED:
       return {
         ...state,
@@ -22,6 +30,14 @@ export default (state = {}, action) => {
         comments: action.error ?
           null :
           (state.comments || []).concat([action.payload.comment])
+      };
+    case ADD_SHARE:
+      return {
+        ...state,
+        cshareErrors: action.error ? action.payload.errors : null,
+        shares: action.error ?
+          null :
+          (state.shares || []).concat([action.payload.share])
       };
     case DELETE_COMMENT:
       const commentId = action.commentId

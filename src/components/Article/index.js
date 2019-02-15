@@ -5,6 +5,7 @@ import agent from '../../agent';
 import { connect } from 'react-redux';
 import marked from 'marked';
 import { ARTICLE_PAGE_LOADED, ARTICLE_PAGE_UNLOADED } from '../../constants/actionTypes';
+import ShareContainer from '../ShareContainer'
 
 const mapStateToProps = state => ({
   ...state.article,
@@ -34,7 +35,7 @@ class Article extends React.Component {
     if (!this.props.article) {
       return null;
     }
-
+    const { location: { pathname } } = this.props
     const markup = { __html: marked(this.props.article.body, { sanitize: true }) };
     const canModify = this.props.currentUser &&
       this.props.currentUser.username === this.props.article.author.username;
@@ -78,8 +79,7 @@ class Article extends React.Component {
 
           <hr />
 
-          <div className="article-actions">
-          </div>
+          {this.props.currentUser && <ShareContainer pathname={pathname} article={this.props.article}/>}
 
           <div className="row">
             <CommentContainer

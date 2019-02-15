@@ -3,7 +3,8 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'https://conduit.productionready.io/api';
+// const API_ROOT = 'https://conduit.productionready.io/api';
+const API_ROOT = 'http://localhost:3000/api';
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
@@ -77,6 +78,13 @@ const Comments = {
     requests.get(`/articles/${slug}/comments`)
 };
 
+const Shares = {
+  create: (slug, share) =>
+    requests.post(`/articles/${slug}/shares`, { share }),
+  forArticle: slug =>
+    requests.get(`/articles/${slug}/shares`)
+}
+
 const Profile = {
   follow: username =>
     requests.post(`/profiles/${username}/follow`),
@@ -92,5 +100,6 @@ export default {
   Comments,
   Profile,
   Tags,
+  Shares,
   setToken: _token => { token = _token; }
 };

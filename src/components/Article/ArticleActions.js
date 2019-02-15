@@ -24,6 +24,12 @@ const ArticleActions = props => {
           <i className="ion-edit"></i> Edit Article
         </Link>
 
+        <Link
+          to={`/article/${article.slug}/statistics`}
+          className="btn btn-outline-secondary btn-sm">
+          <i className="ion-podium"></i> Statistics
+        </Link>
+
         <button className="btn btn-outline-danger btn-sm" onClick={del}>
           <i className="ion-trash-a"></i> Delete Article
         </button>
