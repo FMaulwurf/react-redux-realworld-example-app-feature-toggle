@@ -33,16 +33,6 @@ describe('Article Statistics', () => {
     cy.wait(['@postUser']);
   })
 
-  beforeEach(() => {
-    cy.server();
-    cy.visit('/articles/how-to-train-your-dragon/statistics', {
-      // see https://github.com/cypress-io/cypress/issues/95#issuecomment-281273126
-      onBeforeLoad(win) {
-        win.fetch = null;
-      }
-    });
-  });
-
   // it('Should fail with invalid credentials', () => {
   //   cy.route({
   //     method: 'POST',
@@ -64,6 +54,13 @@ describe('Article Statistics', () => {
    
     cy.route(/.*\/api\/articles\/how-to-train-your-dragon\/statistics/, 'fixture:shares.json').as('loadShares');
 
+    cy.visit('/articles/how-to-train-your-dragon/statistics', {
+      // see https://github.com/cypress-io/cypress/issues/95#issuecomment-281273126
+      onBeforeLoad(win) {
+        win.fetch = null;
+      }
+    });
+    
     cy.get('@dot').its('length').should('be', 7);
 
     cy.wait(['@loadShares']);
