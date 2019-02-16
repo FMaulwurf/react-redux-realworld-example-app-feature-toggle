@@ -2,7 +2,7 @@
   "shares": [{
       "_id" : "5c66bc9ae1b529ebdd976821",
       "updatedAt" : "2019-02-15T13:20:26.472Z",
-      "createdAt" : "2019-02-12T10:20:26.472Z",
+      "createdAt" : "2019-02-22T10:20:26.472Z",
       "author": {
         "username": "jake",
         "bio": "I work at statefarm",
@@ -15,8 +15,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
@@ -32,7 +32,7 @@
     {
       "_id" : "5c66e329b8fdb5f4e09961c0",
       "updatedAt" : "2019-02-15T16:04:57.132Z",
-      "createdAt" : "2019-02-13T11:04:57.132Z",
+      "createdAt" : "2019-02-20T11:04:57.132Z",
       "author": {
         "username": "jake",
         "bio": "I work at statefarm",
@@ -45,8 +45,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
@@ -75,8 +75,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
@@ -105,8 +105,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
@@ -122,7 +122,7 @@
     {
       "_id" : "5c66e333b8fdb5f4e09961c3",
       "updatedAt" : "2019-02-15T16:05:07.606Z",
-      "createdAt" : "2019-02-20T14:05:07.606Z",
+      "createdAt" : "2019-02-13T14:05:07.606Z",
       "author": {
         "username": "johnjacob",
         "bio": "I work at statefarm",
@@ -135,8 +135,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
@@ -152,7 +152,7 @@
     {
       "_id" : "5c66e339b8fdb5f4e09961c4",
       "updatedAt" : "2019-02-15T16:05:13.451Z",
-      "createdAt" : "2019-02-22T16:05:13.451Z",
+      "createdAt" : "2019-02-10T16:05:13.451Z",
       "author": {
         "username": "jake",
         "bio": "I work at statefarm",
@@ -165,8 +165,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
@@ -182,7 +182,7 @@
     {
       "_id" : "5c6708a8b8fdb5f4e09961c7",
       "updatedAt" : "2019-02-15T18:44:56.661Z",
-      "createdAt" : "2019-02-15T18:44:56.661Z",
+      "createdAt" : "2019-02-09T18:44:56.661Z",
       "author": {
         "username": "jake",
         "bio": "I work at statefarm",
@@ -195,8 +195,8 @@
         "description": "Ever wonder how?",
         "body": "It takes a Jacobian",
         "tagList": ["dragons", "training"],
-        "createdAt": "2016-02-18T03:22:56.637Z",
-        "updatedAt": "2016-02-18T03:48:35.824Z",
+        "createdAt": "2019-02-18T03:22:56.637Z",
+        "updatedAt": "2019-02-18T03:48:35.824Z",
         "favorited": false,
         "favoritesCount": 0,
         "author": {
