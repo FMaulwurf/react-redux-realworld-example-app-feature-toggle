@@ -22,6 +22,8 @@ defaults: &defaults
     # after all tests finish running we need
     # to kill all background jobs (like "npm start &")
     - kill $(jobs -p) || true
+    # after tests run we confirm the build
+    - npm run build
 
 jobs:
   include:
