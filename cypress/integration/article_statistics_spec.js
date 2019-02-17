@@ -18,6 +18,7 @@ describe('Article Statistics', () => {
 
     cy.wait(['@loadArticle', '@loadShares']);
     cy.get('.dot').its('length').should('be', 7);
+    cy.get('.sharedots').should('exist')
   });
 
   afterEach(() => {

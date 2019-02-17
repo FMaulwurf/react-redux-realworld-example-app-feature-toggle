@@ -79,7 +79,7 @@ class Article extends React.Component {
 
           <hr />
 
-          {this.props.currentUser && <ShareContainer pathname={pathname} article={this.props.article}/>}
+          <ShareContainer pathname={pathname} article={this.props.article} shouldCountShare={this.props.currentUser}/>
 
           <div className="row">
             <CommentContainer

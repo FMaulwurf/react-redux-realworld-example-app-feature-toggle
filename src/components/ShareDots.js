@@ -46,7 +46,7 @@ class ShareDots extends React.Component {
     });
 
     return (
-      <div>
+      <div className="sharedots">
         <svg width={width} height={height}>
           <LinearGradient from="#fafafa" to="#f5f5f5" id="green"/>;
           <rect width={width} height={height} rx={14} fill={"url(#green)"} />

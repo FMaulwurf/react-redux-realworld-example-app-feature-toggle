@@ -34,8 +34,10 @@ const shareButtonSize = 32
 class ShareContainer extends React.Component {
 
   beforeOnClick = sharetype => {
-    const {article : { slug }, share} = this.props
-    share(slug, sharetype)
+    const {article : { slug }, share, shouldCountShare} = this.props
+    if (shouldCountShare) {
+      share(slug, sharetype)
+    }
   }
 
   render() {
@@ -45,7 +47,7 @@ class ShareContainer extends React.Component {
     const via = 'Conduit Example App Share Extension'
     const url = `${ROOT_URL}${pathname}`
     return (
-      <div style={shareContainerStyles}>
+      <div style={shareContainerStyles} className="share-container">
         <FacebookShareButton
           url={url}
           style={shareButtonStyles}
