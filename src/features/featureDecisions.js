@@ -1,4 +1,4 @@
-const createFeatureDecisions = (features) => {
+const createFeatureDecisions = (features = []) => {
   return {
     includeArticleShareFeature(){
       return features.includes("article-share-feature");
