@@ -5,10 +5,15 @@ import agent from '../../agent';
 import { connect } from 'react-redux';
 import marked from 'marked';
 import { ARTICLE_PAGE_LOADED, ARTICLE_PAGE_UNLOADED } from '../../constants/actionTypes';
+import ShareContainer from '../ShareContainer'
+
+import featureAwareFactoryBasedOn from '../../features/featureAwareFactory';
+import createFeatureDecisions from '../../features/featureDecisions';
 
 const mapStateToProps = state => ({
   ...state.article,
-  currentUser: state.common.currentUser
+  currentUser: state.common.currentUser,
+  features: state.features.active
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -34,6 +39,8 @@ class Article extends React.Component {
     if (!this.props.article) {
       return null;
     }
+
+    const { location: { pathname } } = this.props
 
     const markup = { __html: marked(this.props.article.body, { sanitize: true }) };
     const canModify = this.props.currentUser &&
@@ -78,8 +85,13 @@ class Article extends React.Component {
 
           <hr />
 
-          <div className="article-actions">
-          </div>
+          {
+            featureAwareFactoryBasedOn(
+              createFeatureDecisions(this.props.features).includeArticleShareFeature()
+            ).allowedToReturnComponent(
+              <ShareContainer pathname={pathname} article={this.props.article} shouldCountShare={this.props.currentUser}/>
+            )
+          }
 
           <div className="row">
             <CommentContainer

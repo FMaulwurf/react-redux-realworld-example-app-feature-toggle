@@ -14,6 +14,8 @@ import Register from '../components/Register';
 import Settings from '../components/Settings';
 import { store } from '../store';
 import { push } from 'react-router-redux';
+import { FETCH_FEATURES } from '../constants/actionTypes';
+import ArticleStatistics from '../components/ArticleStatistics';
 
 const mapStateToProps = state => {
   return {
@@ -26,6 +28,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   onLoad: (payload, token) =>
     dispatch({ type: APP_LOAD, payload, token, skipTracking: true }),
+  fetchFeatures: (token) =>
+    dispatch({ type: FETCH_FEATURES, payload: agent.Features.get(token) }),
   onRedirect: () =>
     dispatch({ type: REDIRECT })
 });
@@ -46,6 +50,7 @@ class App extends React.Component {
     }
 
     this.props.onLoad(token ? agent.Auth.current() : null, token);
+    this.props.fetchFeatures(token)
   }
 
   render() {
@@ -61,6 +66,7 @@ class App extends React.Component {
             <Route path="/register" component={Register} />
             <Route path="/editor/:slug" component={Editor} />
             <Route path="/editor" component={Editor} />
+            <Route exact path="/article/:id/statistics" component={ArticleStatistics} />
             <Route path="/article/:id" component={Article} />
             <Route path="/settings" component={Settings} />
             <Route path="/@:username/favorites" component={ProfileFavorites} />

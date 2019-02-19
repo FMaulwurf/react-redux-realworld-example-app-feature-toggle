@@ -24,6 +24,7 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 const articlesFx = require('../fixtures/articles.json');
+const sharesFx = require('../fixtures/shares.json');
 
 Cypress.Commands.add('getArticles', (limit = 10, offset = 0) => {
   if (articlesFx.articles.length > limit) {
@@ -51,3 +52,11 @@ Cypress.Commands.add('getArticlesByTag', (tag, limit = 10, offset = 0) =>
 Cypress.Commands.add('getArticle', slug => ({
   article: articlesFx.articles.filter(article => article.slug === slug)[0]
 }));
+
+Cypress.Commands.add('getSharesForArticle', (slug, limit = 10, offset = 0) =>
+  Object.assign(sharesFx, {
+    shares: sharesFx.shares.filter(share =>
+      share.article.slug === slug
+    )
+  })
+);
